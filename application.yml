@@ -1,23 +1,20 @@
 server:
-  servlet:
-    port: 8000 #定义单点登录端口
-    context-path: / #改配置可省略，默认配置为根目录发布
-spring:
-  datasource:
+  port: 8001 #定义单点登录端口
+  servlet:    context-path: / #改配置可省略，默认配置为根目录发布
+spring:  datasource:
     #引入druid数据源
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource    driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/jtdb?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true
     username: root
-    password: 123456
-  application:   #定义服务名称
-    name: provider-user    
+    password: 123456  application:   #定义服务名称
+    name: provider-user
+    
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7000/eureka
   instance:
-    instance-id: provider-user-8000                #定义微服务的名称
+    instance-id: provider-user-8001                #定义微服务的名称
     prefer-ip-address: true                        #是否显示IP和端口
 #mybatis:
 #  type-aliases-package: com.jt.demo.pojo
