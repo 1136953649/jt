@@ -1,4 +1,5 @@
 server:
+  port: 8000 #定义单点登录端口
   servlet:
     context-path: / #改配置可省略，默认配置为根目录发布
 spring:
